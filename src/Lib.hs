@@ -1,6 +1,6 @@
 module Lib
-    ( someFunc
+    ( fetchRates
     ) where
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+fetchRates :: String -> IO ()
+fetchRates baseCurrency = putStrLn ("someFunc" ++ baseCurrency)

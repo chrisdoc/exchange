@@ -7,6 +7,7 @@
 
 module Main where
 
+import Data.Maybe
 import Options.Generic    
 import Lib
 
@@ -17,7 +18,11 @@ data Command w = Command {
 instance ParseRecord (Command Wrapped)
 deriving instance Show (Command Unwrapped)
 
+defaultToUsd :: Maybe String -> String
+defaultToUsd = fromMaybe "USD"
+
 main :: IO ()
 main = do
     x <- unwrapRecord "Conversion"
-    print (x :: (Command Unwrapped))
+    let baseCurrency = defaultToUsd (base x)
+    fetchRates baseCurrency
