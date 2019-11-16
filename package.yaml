@@ -35,6 +35,7 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - exchange
+    - optparse-generic
 
 tests:
   exchange-test:

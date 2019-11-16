@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 498c976ab0fa9542a43e478268b33c2b89b3c846fc93e3331ee8ee0bf3a24121
+-- hash: fd1923900d03e88a1e22890fdcdd9715b9761d416a5749dcd551080099013c73
 
 name:           exchange
 version:        0.1.0.0
@@ -46,6 +46,7 @@ executable exchange-exe
   build-depends:
       base >=4.7 && <5
     , exchange
+    , optparse-generic
   default-language: Haskell2010
 
 test-suite exchange-test
