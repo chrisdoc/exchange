@@ -28,7 +28,7 @@ fetchRates baseCurrency = runReq defaultHttpConfig $ do
         (https "api.exchangeratesapi.io" /: "latest" )
         NoReqBody
         bsResponse
-        mempty
+        ("base" =: baseCurrency)
     let body = responseBody r
     let rates :: Rates 
         rates = fromJust (decode (B.fromStrict body))
