@@ -25,7 +25,7 @@ instance FromJSON Rates
 fetchRates :: String -> IO ()
 fetchRates baseCurrency = runReq defaultHttpConfig $ do
     r <- req GET 
-        (https "api.exchangeratesapi.io" /: "latest" )
+        (https "api.exchangeratesapi.io" /: "latest")
         NoReqBody
         bsResponse
         ("base" =: baseCurrency)
@@ -33,5 +33,3 @@ fetchRates baseCurrency = runReq defaultHttpConfig $ do
     let rates :: Rates 
         rates = fromJust (decode (B.fromStrict body))
     liftIO $ print $ rates
-
-
