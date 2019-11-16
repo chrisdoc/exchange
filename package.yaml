@@ -21,6 +21,11 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
+- bytestring
+- aeson
+- containers
+- optparse-generic
+- req
 
 library:
   source-dirs: src
@@ -35,7 +40,6 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - exchange
-    - optparse-generic
 
 tests:
   exchange-test:
